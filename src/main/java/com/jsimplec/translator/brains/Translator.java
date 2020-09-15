@@ -1,4 +1,4 @@
-package com.jsimplec.translator;
+package com.jsimplec.translator.brains;
 
 import com.jsimplec.translator.model.MapWrapper;
 
