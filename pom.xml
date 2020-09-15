@@ -8,6 +8,8 @@
     <artifactId>basic-translator</artifactId>
     <version>1.0.0</version>
     <name>pojo-translator</name>
+    <description>Simple JVM library for translating the mutable POJOs</description>
+    <url>https://github.com/ayxan386/basic-translator</url>
     <licenses>
         <license>
             <name>MIT License</name>
