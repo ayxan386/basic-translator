@@ -5,8 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jsimplec</groupId>
-    <artifactId>basic-translator</artifactId>
-    <version>1.0.0</version>
+    <artifactId>pojo-translator</artifactId>
+    <version>1.1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <name>pojo-translator</name>
     <description>Simple JVM library for translating the mutable POJOs</description>
     <url>https://github.com/ayxan386/basic-translator</url>
@@ -65,8 +73,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -87,7 +95,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.1.1</version>
                 <configuration>
-                    <javadocExecutable>/usr/lib/jvm/java-11-openjdk-amd64/bin/javadoc</javadocExecutable>
+                    <javadocExecutable>/usr/lib/jvm/java-8-openjdk-amd64/bin/javadoc</javadocExecutable>
                 </configuration>
                 <executions>
                     <execution>

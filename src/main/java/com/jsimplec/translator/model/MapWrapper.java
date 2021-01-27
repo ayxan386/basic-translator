@@ -15,6 +15,14 @@ public class MapWrapper {
     fillInMap(translationModels);
   }
 
+  public static MapWrapper buildInstance(List<TranslationModel> translations, String targetLang) {
+    return new MapWrapper(translations, targetLang);
+  }
+
+  public static String makeKey(String fn, String val) {
+    return String.format("%s|%s", fn, val);
+  }
+
   private void fillInMap(List<TranslationModel> translations) {
     translations
         .forEach(t -> t
@@ -28,13 +36,5 @@ public class MapWrapper {
       return Optional.ofNullable(values.get(key));
     }
     return Optional.empty();
-  }
-
-  public static MapWrapper buildInstance(List<TranslationModel> translations, String targetLang) {
-    return new MapWrapper(translations, targetLang);
-  }
-
-  public static String makeKey(String fn, String val) {
-    return String.format("%s|%s", fn, val);
   }
 }
