@@ -9,15 +9,16 @@ import java.util.stream.Stream;
 
 public class PojoTranslator {
   private final TranslationSource source;
-  private final GroupNameGenerator groupName;
+  private final ClassNameGenerator classNameGenerator;
 
-  public PojoTranslator(TranslationSource source, GroupNameGenerator groupName) {
+  public PojoTranslator(TranslationSource source, ClassNameGenerator classNameGenerator) {
     this.source = source;
-    this.groupName = groupName;
+    this.classNameGenerator = classNameGenerator;
   }
 
   public PojoTranslator(TranslationSource source) {
-    this(source, new GroupNameGenerator());
+    this(source, new ClassNameGenerator() {
+    });
   }
 
 
@@ -26,7 +27,7 @@ public class PojoTranslator {
     objs
         .stream()
         .findFirst()
-        .map(groupName::getGroupName)
+        .map(classNameGenerator::getGroupName)
         .map(source::loadByClassName)
         .map(tl -> MapWrapper.buildInstance(tl, lang))
         .ifPresent(mp -> objs.forEach(obj -> obj.translate(mp)));
@@ -40,7 +41,7 @@ public class PojoTranslator {
     objs
         .stream()
         .findFirst()
-        .map(groupName::getGroupName)
+        .map(classNameGenerator::getGroupName)
         .map(source::loadByClassName)
         .map(tl -> MapWrapper.buildInstance(tl, lang))
         .ifPresent(mp -> objs.forEach(obj -> f.translate(obj, mp)));
