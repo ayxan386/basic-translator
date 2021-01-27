@@ -78,12 +78,12 @@ class PojoTranslatorTest {
       return name;
     }
 
-    public String getPurpose() {
-      return purpose;
-    }
-
     public void setName(String name) {
       this.name = name;
+    }
+
+    public String getPurpose() {
+      return purpose;
     }
 
     public void setPurpose(String purpose) {
